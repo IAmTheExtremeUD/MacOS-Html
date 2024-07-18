@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>macOS-like Interface</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #f06, orange);
+            font-family: 'San Francisco', Arial, sans-serif;
+        }
+        .menu-bar {
+            width: 100%;
+            height: 24px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10px;
+            position: absolute;
+            top: 0;
+        }
+        .menu-bar .left, .menu-bar .right {
+            display: flex;
+            align-items: center;
+        }
+        .menu-bar .left span, .menu-bar .right span {
+            color: white;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        .menu-bar .right {
+            margin-left: auto;
+        }
+        .dock {
+            width: 80%;
+            height: 64px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 10px;
+        }
+        .dock .icon {
+            width: 48px;
+            height: 48px;
+            background-size: cover;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .dock .icon:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-bar">
+        <div class="left">
+            <span>ï£¿</span>
+            <span>Finder</span>
+            <span>File</span>
+            <span>Edit</span>
+            <span>View</span>
+            <span>Go</span>
+            <span>Window</span>
+            <span>Help</span>
+        </div>
+        <div class="right">
+            <span>Thu Jul 18 8:46 AM</span>
+        </div>
+    </div>
+    <div class="dock">
+        <div class="icon" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/9/98/FinderBigSur.png');" onclick="openApp('Finder')"></div>
+        <div class="icon" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b6/Safari-icon-1024.png');" onclick="openApp('Safari')"></div>
+        <div class="icon" style="background-image: url('https://cdn2.iconfinder.com/data/icons/ios7-inspired-mac-icon-set/512/Calculator_512.png');" onclick="openApp('Calculator')"></div>
+        <div class="icon" style="background-image: url('https://www.apple.com/v/app-store/b/images/overview/icon_appstore__ev0z770zyxoy_large_2x.png');" onclick="openApp('App Store')"></div>
+        <div class="icon" style="background-image: url('https://cdn.jim-nielsen.com/macos/512/terminal-2021-06-03.png?rf=1024');" onclick="openApp('Terminal')"></div>
+        <div class="icon" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Roblox_icon_-_2017.svg/2048px-Roblox_icon_-_2017.svg.png');" onlick="openApp('Roblox Player')"></div>
+        <div class="icon" style="background-image: url('https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/optimized/4X/1/1/c/11c9715ca5677e195dd7f9864ab98e2290f757c2_2_500x500.png');" onclick="openApp('Roblox Studio')"></div>
+        <div class="icon" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/5/56/Xcode_14_icon.png');" onclick="openApp('Xcode')"></div>
+    </div>
+    <script>
+        function openApp(appName) {
+            alert(appName + ' opened!');
+            // Add actual app opening logic here
+        }
+    </script>
+</body>
+</html>
